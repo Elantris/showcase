@@ -1,0 +1,23 @@
+@import 'tailwindcss';
+
+body {
+  background: var(--color-zinc-900);
+
+  font-family: 'Noto Sans TC', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: normal;
+  font-style: normal;
+}
+
+@theme {
+  --animate-grow-width: grow-width 5s steps(10, jump-start) infinite;
+
+  @keyframes grow-width {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
+  }
+}
