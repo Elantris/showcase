@@ -23,7 +23,7 @@ export const Layout: FC<{
     {
       key: 'infinite',
       icon: <i className="fa-solid fa-cube" />,
-      label: 'Infinite Scroll',
+      label: 'Infinite Scrolling',
       onClick: () => navigate('/infinite'),
     },
   ]
@@ -41,7 +41,7 @@ export const Layout: FC<{
         </button>
       </header>
 
-      <nav className="flex w-full flex-wrap items-center justify-center gap-4 px-8">
+      <nav className="flex w-full flex-wrap items-center justify-center gap-4 px-4">
         {items.map((item) => {
           const isActive = activeItem?.key === item.key
 
@@ -50,8 +50,8 @@ export const Layout: FC<{
               key={item.key}
               className={twMerge(
                 'flex h-8 cursor-pointer items-center gap-2 rounded border border-zinc-500 bg-zinc-700 px-2 transition-all',
-                'hover:border-violet-500 hover:bg-zinc-500',
-                isActive && 'border-violet-500 bg-zinc-500',
+                'hover:border-violet-500 hover:bg-zinc-600',
+                isActive && 'border-violet-500 text-violet-300',
               )}
               onClick={() => item.onClick?.()}
             >
@@ -62,21 +62,30 @@ export const Layout: FC<{
         })}
       </nav>
 
-      {activeItem && <>{children}</>}
+      {activeItem && <main className="mx-auto w-full max-w-3xl space-y-8 px-4">{children}</main>}
     </div>
   )
 }
 
-export const Main: FC<{
+export const Panel: FC<{
+  title?: ReactNode
   className?: string
   children?: ReactNode
-}> = ({ className, children }) => {
-  return <main className={twMerge('mx-auto w-full max-w-3xl rounded-lg bg-zinc-700 p-4', className)}>{children}</main>
+}> = ({ title, className, children }) => {
+  return (
+    <div className={twMerge('space-y-4 rounded-lg bg-zinc-700 p-4', className)}>
+      {title && (
+        <h1 className={twMerge('border-b border-zinc-500 text-2xl font-bold text-violet-300', className)}>{title}</h1>
+      )}
+      {children}
+    </div>
+  )
 }
 
 export const CodeBlock: FC<{
+  title?: ReactNode
   children?: ReactNode
-}> = ({ children }) => {
+}> = ({ title, children }) => {
   const [isCopied, setIsCopied] = useState(false)
 
   const handleCopy = () => {
@@ -92,16 +101,18 @@ export const CodeBlock: FC<{
   }
 
   return (
-    <div className="relative w-full overflow-y-auto rounded-lg border border-transparent bg-zinc-800 p-4 transition-all hover:border-zinc-500">
-      <div className="absolute top-1 right-1 flex gap-2">
+    <div className="w-full rounded-lg border border-transparent bg-zinc-800 p-4 transition-all hover:border-zinc-500">
+      <div className="flex items-center gap-2 transition-all">
+        <div className="grow border-b border-zinc-500 text-lg text-violet-300">{title}</div>
         <button
-          className="inline-flex size-8 cursor-pointer items-center justify-center rounded border border-zinc-500 hover:bg-zinc-500"
+          className="inline-flex size-8 cursor-pointer items-center justify-center rounded border border-zinc-500 transition-all hover:border-violet-500 hover:bg-violet-500"
           onClick={() => handleCopy()}
         >
           {isCopied ? <i className="fa-solid fa-check text-green-500" /> : <i className="fa-solid fa-copy" />}
         </button>
       </div>
-      <pre>{children}</pre>
+
+      <pre className="overflow-y-auto py-2">{children}</pre>
     </div>
   )
 }

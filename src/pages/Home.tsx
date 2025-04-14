@@ -1,4 +1,3 @@
-import { twMerge } from 'tailwind-merge'
 import { useLocation } from 'wouter'
 
 const Home = () => {
@@ -44,11 +43,7 @@ const Home = () => {
           return (
             <div
               key={project.key}
-              className={twMerge(
-                'flex size-50 flex-col gap-2 rounded-2xl border-2 border-zinc-500 bg-zinc-800 p-4',
-                'group cursor-pointer transition-all',
-                'hover:-translate-y-2 hover:border-violet-500 hover:bg-zinc-700',
-              )}
+              className="group flex size-50 cursor-pointer flex-col gap-2 rounded-2xl border-2 border-zinc-500 bg-zinc-800 p-4 transition-all hover:-translate-y-2 hover:border-violet-500 hover:bg-zinc-700"
               onClick={() => {
                 if (project.to.startsWith('http')) {
                   window.open(project.to, '_blank')
