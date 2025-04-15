@@ -13,16 +13,20 @@ const Slash = () => {
     <Panel title="Slash Block / 漸層斜線背景">
       <SlashBlock />
 
-      <CodeBlock title="Tailwind">
-        {`
+      <CodeBlock
+        title="Tailwind"
+        language="html"
+        codes={`
 <div className="relative inline-flex h-12 items-center overflow-hidden rounded border-2 border-gray-300 px-8 before:absolute before:inset-0 before:scale-200 before:rotate-[30deg] before:bg-linear-[to_right,transparent_80%,var(--color-gray-500)_80%] before:bg-size-[6px_100%] before:content-['']">
   <span className="relative text-white">ABCDE</span>
 </div>
         `.trim()}
-      </CodeBlock>
+      />
 
-      <CodeBlock title="CSS">
-        {`
+      <CodeBlock
+        title="CSS"
+        language="css"
+        codes={`
 .slash-box {
   position: relative;
   display: inline-flex;
@@ -48,7 +52,7 @@ const Slash = () => {
   }
 }
         `.trim()}
-      </CodeBlock>
+      />
     </Panel>
   )
 }

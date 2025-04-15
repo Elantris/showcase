@@ -58,8 +58,10 @@ const Infinite = () => {
   return (
     <>
       <Panel title="Infinite Scrolling / 無限捲動">
-        <CodeBlock title="useInteractionObserver.ts">
-          {`
+        <CodeBlock
+          title="TypeScript"
+          language="typescript"
+          codes={`
 const useInteractionObserver = (callback: IntersectionObserverCallback) => {
   const [target, setTarget] = useState<Element | null>(null)
 
@@ -79,7 +81,7 @@ const useInteractionObserver = (callback: IntersectionObserverCallback) => {
   }
 }
         `.trim()}
-        </CodeBlock>
+        />
       </Panel>
 
       <Panel>

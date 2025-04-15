@@ -5,6 +5,7 @@ import { Layout } from './pages/components'
 import Infinite from './pages/components/Infinite'
 import Loading from './pages/components/Loading'
 import Slash from './pages/components/Slash'
+import Tabs from './pages/components/Tabs'
 
 const App = () => (
   <Router hook={useHashLocation}>
@@ -15,6 +16,7 @@ const App = () => (
             <Route path="/loading" component={Loading} />
             <Route path="/slash" component={Slash} />
             <Route path="/infinite" component={Infinite} />
+            <Route path="/tabs" component={Tabs} />
           </Switch>
         </Layout>
       </Route>

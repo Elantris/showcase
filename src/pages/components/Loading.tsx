@@ -14,17 +14,21 @@ const Loading = () => {
     <Panel title="Loading / 純 CSS 進度條">
       <LoadingBar />
 
-      <CodeBlock title="Tailwind">
-        {`
+      <CodeBlock
+        title="Tailwind"
+        language="html"
+        codes={`
 <div className="relative h-10 w-64 overflow-hidden rounded-lg border-2 border-black bg-white">
   <div className="animate-grow-width absolute top-1 bottom-1 left-0 bg-black" />
   <div className="absolute inset-0 bg-linear-[to_right,white_25%,transparent_25%,transparent_75%,white_75%] from-white to-white bg-size-[10%_100%]" />
 </div>
         `.trim()}
-      </CodeBlock>
+      />
 
-      <CodeBlock title="index.css">
-        {`
+      <CodeBlock
+        title="index.css"
+        language="css"
+        codes={`
 @theme {
   --animate-grow-width: grow-width 5s steps(10, jump-start) infinite;
 
@@ -38,7 +42,7 @@ const Loading = () => {
   }
 }
         `.trim()}
-      </CodeBlock>
+      />
     </Panel>
   )
 }

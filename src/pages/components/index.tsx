@@ -1,4 +1,6 @@
 import { FC, ReactNode, useState } from 'react'
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
+import { oneDark } from 'react-syntax-highlighter/dist/esm/styles/prism'
 import { twMerge } from 'tailwind-merge'
 import { useLocation } from 'wouter'
 
@@ -26,6 +28,12 @@ export const Layout: FC<{
       label: 'Infinite Scrolling',
       onClick: () => navigate('/infinite'),
     },
+    {
+      key: 'tabs',
+      icon: <i className="fa-solid fa-cube" />,
+      label: 'Tabs',
+      onClick: () => navigate('/tabs'),
+    },
   ]
 
   const activeItem = items.find((item) => location === `/${item.key}`)
@@ -49,8 +57,8 @@ export const Layout: FC<{
             <div
               key={item.key}
               className={twMerge(
-                'flex h-8 cursor-pointer items-center gap-2 rounded border border-zinc-500 bg-zinc-700 px-2 transition-all',
-                'hover:border-violet-500 hover:bg-zinc-600',
+                'flex h-8 cursor-pointer items-center gap-2 rounded border border-zinc-500 bg-zinc-800 px-2 transition-all',
+                'hover:border-violet-500 hover:bg-zinc-700',
                 isActive && 'border-violet-500 text-violet-300',
               )}
               onClick={() => item.onClick?.()}
@@ -83,14 +91,15 @@ export const Panel: FC<{
 }
 
 export const CodeBlock: FC<{
-  title?: ReactNode
-  children?: ReactNode
-}> = ({ title, children }) => {
+  title: ReactNode
+  language: string
+  codes: string
+}> = ({ title, language, codes }) => {
   const [isCopied, setIsCopied] = useState(false)
 
   const handleCopy = () => {
     try {
-      navigator.clipboard.writeText(children as string)
+      navigator.clipboard.writeText(codes)
       setIsCopied(true)
       setTimeout(() => {
         setIsCopied(false)
@@ -112,7 +121,9 @@ export const CodeBlock: FC<{
         </button>
       </div>
 
-      <pre className="overflow-y-auto py-2">{children}</pre>
+      <SyntaxHighlighter language={language} style={oneDark}>
+        {codes}
+      </SyntaxHighlighter>
     </div>
   )
 }
