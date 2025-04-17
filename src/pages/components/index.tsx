@@ -3,6 +3,8 @@ import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
 import { oneDark } from 'react-syntax-highlighter/dist/esm/styles/prism'
 import { twMerge } from 'tailwind-merge'
 import { useLocation } from 'wouter'
+import Button from '../../components/Button'
+import './index.css'
 
 export const Layout: FC<{
   children?: ReactNode
@@ -11,22 +13,22 @@ export const Layout: FC<{
 
   const items = [
     {
-      key: 'loading',
+      key: 'slash-box',
       icon: <i className="fa-solid fa-cube" />,
-      label: 'Loading',
-      onClick: () => navigate('/loading'),
+      label: 'Slash box',
+      onClick: () => navigate('/slash-box'),
     },
     {
-      key: 'slash',
+      key: 'progress-bar',
       icon: <i className="fa-solid fa-cube" />,
-      label: 'Slash Block',
-      onClick: () => navigate('/slash'),
+      label: 'Progress Bar',
+      onClick: () => navigate('/progress-bar'),
     },
     {
-      key: 'infinite',
+      key: 'loading-bar',
       icon: <i className="fa-solid fa-cube" />,
-      label: 'Infinite Scrolling',
-      onClick: () => navigate('/infinite'),
+      label: 'Loading Bar',
+      onClick: () => navigate('/loading-bar'),
     },
     {
       key: 'tabs',
@@ -34,19 +36,32 @@ export const Layout: FC<{
       label: 'Tabs',
       onClick: () => navigate('/tabs'),
     },
+    {
+      key: 'gradient-border',
+      icon: <i className="fa-solid fa-cube" />,
+      label: 'Gradient Border',
+      onClick: () => navigate('/gradient-border'),
+    },
+    {
+      key: 'infinite-scrolling',
+      icon: <i className="fa-solid fa-cube" />,
+      label: 'Infinite Scrolling',
+      onClick: () => navigate('/infinite-scrolling'),
+    },
   ]
 
   const activeItem = items.find((item) => location === `/${item.key}`)
 
   return (
-    <div className="relative min-h-dvh w-dvw space-y-8 overflow-x-hidden text-white">
-      <header className="sticky top-0 h-12 w-full bg-zinc-800">
+    <div className="h-dvh w-dvw space-y-8 overflow-x-hidden overflow-y-auto text-white">
+      <header className="sticky top-0 right-0 left-0 z-30 flex h-12 items-center gap-4 bg-zinc-800">
         <button
-          className="aspect-square h-full cursor-pointer bg-zinc-700 text-lg hover:bg-zinc-600"
+          className="aspect-square h-full shrink-0 cursor-pointer bg-zinc-700 text-lg hover:bg-zinc-600"
           onClick={() => navigate('~')}
         >
           <i className="fa-solid fa-arrow-left" />
         </button>
+        <h1 className="grow font-bold">Components</h1>
       </header>
 
       <nav className="flex w-full flex-wrap items-center justify-center gap-4 px-4">
@@ -54,23 +69,15 @@ export const Layout: FC<{
           const isActive = activeItem?.key === item.key
 
           return (
-            <div
-              key={item.key}
-              className={twMerge(
-                'flex h-8 cursor-pointer items-center gap-2 rounded border border-zinc-500 bg-zinc-800 px-2 transition-all',
-                'hover:border-violet-500 hover:bg-zinc-700',
-                isActive && 'border-violet-500 text-violet-300',
-              )}
-              onClick={() => item.onClick?.()}
-            >
+            <Button key={item.key} isActive={isActive} onClick={() => item.onClick?.()}>
               <div className="aspect-square shrink-0">{item.icon}</div>
               <div className="">{item.label}</div>
-            </div>
+            </Button>
           )
         })}
       </nav>
 
-      {activeItem && <main className="mx-auto w-full max-w-3xl space-y-8 px-4">{children}</main>}
+      {activeItem && <main className="mx-auto w-full max-w-3xl space-y-8 px-4 pb-4">{children}</main>}
     </div>
   )
 }

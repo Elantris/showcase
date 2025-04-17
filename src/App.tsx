@@ -2,9 +2,11 @@ import { Route, Router, Switch } from 'wouter'
 import { useHashLocation } from 'wouter/use-hash-location'
 import Home from './pages/Home'
 import { Layout } from './pages/components'
-import Infinite from './pages/components/Infinite'
-import Loading from './pages/components/Loading'
-import Slash from './pages/components/Slash'
+import GradientBorder from './pages/components/GradientBorder'
+import InfiniteScrolling from './pages/components/InfiniteScrolling'
+import LoadingBar from './pages/components/LoadingBar'
+import ProgressBar from './pages/components/ProgressBar'
+import SlashBox from './pages/components/SlashBox'
 import Tabs from './pages/components/Tabs'
 
 const App = () => (
@@ -13,10 +15,12 @@ const App = () => (
       <Route path="/components" nest>
         <Layout>
           <Switch>
-            <Route path="/loading" component={Loading} />
-            <Route path="/slash" component={Slash} />
-            <Route path="/infinite" component={Infinite} />
+            <Route path="/slash-box" component={SlashBox} />
+            <Route path="/progress-bar" component={ProgressBar} />
+            <Route path="/loading-bar" component={LoadingBar} />
             <Route path="/tabs" component={Tabs} />
+            <Route path="/gradient-border" component={GradientBorder} />
+            <Route path="/infinite-scrolling" component={InfiniteScrolling} />
           </Switch>
         </Layout>
       </Route>

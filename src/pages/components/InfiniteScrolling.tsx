@@ -54,7 +54,7 @@ const InfiniteSection = () => {
   )
 }
 
-const Infinite = () => {
+const InfiniteScrolling = () => {
   return (
     <>
       <Panel title="Infinite Scrolling / 無限捲動">
@@ -91,4 +91,4 @@ const useInteractionObserver = (callback: IntersectionObserverCallback) => {
   )
 }
 
-export default Infinite
+export default InfiniteScrolling

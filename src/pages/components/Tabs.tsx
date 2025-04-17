@@ -135,8 +135,6 @@ const Tabs = () => {
       <Panel title="Tabs">
         <Tabs1 items={items} />
 
-        <p>{''}</p>
-
         <CodeBlock
           title="TypeScript"
           language="tsx"
@@ -150,9 +148,7 @@ const Tabs: FC<{
   const [_activeKey, _setActiveKey] = useState(defaultActiveKey ?? items[0]?.key)
   const __activeKey = activeKey ?? _activeKey
 
-  return (
-    // ...
-  )
+  // ...
 }
         `.trim()}
         />
