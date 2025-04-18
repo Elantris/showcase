@@ -43,6 +43,12 @@ export const Layout: FC<{
       onClick: () => navigate('/gradient-border'),
     },
     {
+      key: 'multiple-border-box',
+      icon: <i className="fa-solid fa-cube" />,
+      label: 'Multiple Border Box',
+      onClick: () => navigate('/multiple-border-box'),
+    },
+    {
       key: 'infinite-scrolling',
       icon: <i className="fa-solid fa-cube" />,
       label: 'Infinite Scrolling',

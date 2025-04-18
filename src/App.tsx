@@ -5,6 +5,7 @@ import { Layout } from './pages/ee-ui'
 import GradientBorder from './pages/ee-ui/GradientBorder'
 import InfiniteScrolling from './pages/ee-ui/InfiniteScrolling'
 import LoadingBar from './pages/ee-ui/LoadingBar'
+import MultipleBorderBox from './pages/ee-ui/MultipleBorderBox'
 import ProgressBar from './pages/ee-ui/ProgressBar'
 import SlashBox from './pages/ee-ui/SlashBox'
 import Tabs from './pages/ee-ui/Tabs'
@@ -20,6 +21,7 @@ const App = () => (
             <Route path="/loading-bar" component={LoadingBar} />
             <Route path="/tabs" component={Tabs} />
             <Route path="/gradient-border" component={GradientBorder} />
+            <Route path="/multiple-border-box" component={MultipleBorderBox} />
             <Route path="/infinite-scrolling" component={InfiniteScrolling} />
           </Switch>
         </Layout>
