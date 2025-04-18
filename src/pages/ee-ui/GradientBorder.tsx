@@ -4,8 +4,8 @@ import Button from '../../components/Button'
 const GradientBorder = () => {
   return (
     <>
-      <Panel title="漸層邊框 / Gradient Border">
-        <div className="gradient-border">
+      <Panel title="Gradient Border / 漸層邊框">
+        <div className="gradient-border demo">
           <div>Background with Mask</div>
         </div>
 
@@ -23,17 +23,14 @@ const GradientBorder = () => {
           language="css"
           codes={`
 .gradient-border {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 15rem;
-  aspect-ratio: 3/2;
-  color: white;
   position: relative;
   padding: 8px;
+
   &::before {
-    content: '';
     position: absolute;
+    mask-image: linear-gradient(white, white), linear-gradient(white, white);
+    mask-clip: padding-box, border-box;
+    mask-composite: exclude, add;
     inset: 0;
     border-width: 8px;
     border-style: solid;
@@ -46,10 +43,17 @@ const GradientBorder = () => {
       var(--color-fuchsia-300)
     );
     background-origin: border-box;
-    mask-image: linear-gradient(white, white), linear-gradient(white, white);
-    mask-clip: padding-box, border-box;
-    mask-composite: exclude, add;
+    content: '';
   }
+}
+
+.gradient-border.demo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  aspect-ratio: 3/2;
+  width: 15rem;
+  color: white;
 }
 `.trim()}
         />

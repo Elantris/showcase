@@ -61,7 +61,7 @@ export const Layout: FC<{
         >
           <i className="fa-solid fa-arrow-left" />
         </button>
-        <h1 className="grow font-bold">Components</h1>
+        <h1 className="grow font-bold">EE UI</h1>
       </header>
 
       <nav className="flex w-full flex-wrap items-center justify-center gap-4 px-4">

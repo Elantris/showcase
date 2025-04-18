@@ -9,9 +9,9 @@ const Home = () => {
 
   const projects = [
     {
-      key: 'components',
+      key: 'ee-ui',
       cover: <i className="fa-solid fa-layer-group text-7xl" />,
-      title: 'Components',
+      title: 'EE UI',
       description: (
         <>
           <p>{'整理曾經寫過的元件，紀錄思考過程中有趣的點子與寫法。'}</p>
@@ -21,7 +21,7 @@ const Home = () => {
         <>
           <Button
             onClick={() => {
-              navigate('/components')
+              navigate('/ee-ui')
             }}
           >
             {'Demo'}

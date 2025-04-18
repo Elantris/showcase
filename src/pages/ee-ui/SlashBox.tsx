@@ -23,14 +23,14 @@ const SlashBox = () => {
           language="css"
           codes={`
 .slash-box {
-  position: relative;
   display: inline-flex;
-  align-items: center;
+  position: relative;
   justify-content: center;
-  height: 48px;
-  padding: 0 16px;
+  align-items: center;
   border: 1px solid var(--color-gray-300);
   border-radius: 4px;
+  padding: 0 16px;
+  height: 48px;
   overflow: hidden;
 
   > * {
@@ -39,13 +39,13 @@ const SlashBox = () => {
   }
 
   &::before {
-    content: ' ';
     display: block;
     position: absolute;
+    transform: rotate(30deg) scale(2);
     inset: 0;
     background-image: linear-gradient(to right, transparent 80%, var(--color-gray-500) 80%);
     background-size: 6px 100%;
-    transform: rotate(30deg) scale(2);
+    content: ' ';
   }
 }
     `.trim()}

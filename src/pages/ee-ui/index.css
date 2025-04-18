@@ -1,12 +1,12 @@
 .slash-box {
-  position: relative;
   display: inline-flex;
-  align-items: center;
+  position: relative;
   justify-content: center;
-  height: 48px;
-  padding: 0 16px;
+  align-items: center;
   border: 1px solid var(--color-gray-300);
   border-radius: 4px;
+  padding: 0 16px;
+  height: 48px;
   overflow: hidden;
 
   > * {
@@ -15,63 +15,63 @@
   }
 
   &::before {
-    content: ' ';
     display: block;
     position: absolute;
+    transform: rotate(30deg) scale(2);
     inset: 0;
     background-image: linear-gradient(to right, transparent 80%, var(--color-gray-500) 80%);
     background-size: 6px 100%;
-    transform: rotate(30deg) scale(2);
+    content: ' ';
   }
 }
 
 .progress-bar {
   position: relative;
+  border: 2px solid var(--color-zinc-200);
+  border-radius: 16px;
+  background: var(--color-zinc-700);
   width: 256px;
   height: 32px;
   overflow: hidden;
-  border-radius: 16px;
-  border: 2px solid var(--color-zinc-200);
-  background: var(--color-zinc-700);
 
   > div {
     position: absolute;
     top: 0;
     bottom: 0;
     left: 0;
-    overflow: hidden;
+    box-shadow: inset 0 -6px 4px 0 rgba(0, 0, 0, 0.25);
     border-radius: inherit;
     background: var(--color-violet-500);
-    box-shadow: inset 0 -6px 4px 0 rgba(0, 0, 0, 0.25);
+    overflow: hidden;
 
     &::before {
-      content: '';
       position: absolute;
-      inset: 0;
       transform: skewX(-30deg);
+      opacity: 0.5;
+      inset: 0;
       background: linear-gradient(to right, transparent 75%, var(--color-zinc-200) 75%);
       background-size: 16px 100%;
-      opacity: 0.5;
+      content: '';
     }
   }
 }
 
 .loading-bar {
   position: relative;
+  border: 2px solid black;
+  border-radius: 8px;
+  background: white;
   width: 256px;
   height: 40px;
   overflow: hidden;
-  border-radius: 8px;
-  border: 2px solid black;
-  background: white;
 
   > div:first-child {
     position: absolute;
     top: 4px;
     bottom: 4px;
     left: 0;
-    background: black;
     animation: grow-width 5s steps(10, jump-start) infinite;
+    background: black;
   }
 
   > div:last-child {
@@ -82,18 +82,24 @@
   }
 }
 
+@keyframes grow-width {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
 .gradient-border {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 15rem;
-  aspect-ratio: 3/2;
-  color: white;
   position: relative;
   padding: 8px;
+
   &::before {
-    content: '';
     position: absolute;
+    mask-image: linear-gradient(white, white), linear-gradient(white, white);
+    mask-clip: padding-box, border-box;
+    mask-composite: exclude, add;
     inset: 0;
     border-width: 8px;
     border-style: solid;
@@ -106,8 +112,6 @@
       var(--color-fuchsia-300)
     );
     background-origin: border-box;
-    mask-image: linear-gradient(white, white), linear-gradient(white, white);
-    mask-clip: padding-box, border-box;
-    mask-composite: exclude, add;
+    content: '';
   }
 }

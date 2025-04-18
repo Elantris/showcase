@@ -25,20 +25,20 @@ const LoadingBar = () => {
           codes={`
 .loading-bar {
   position: relative;
-  width: 256px;
-  height: 32px;
-  overflow: hidden;
-  border-radius: 8px;
   border: 2px solid black;
+  border-radius: 8px;
   background: white;
+  width: 256px;
+  height: 40px;
+  overflow: hidden;
 
   > div:first-child {
     position: absolute;
     top: 4px;
     bottom: 4px;
     left: 0;
-    background: black;
     animation: grow-width 5s steps(10, jump-start) infinite;
+    background: black;
   }
 
   > div:last-child {
