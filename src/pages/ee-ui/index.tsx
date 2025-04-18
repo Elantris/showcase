@@ -5,58 +5,14 @@ import { twMerge } from 'tailwind-merge'
 import { useLocation } from 'wouter'
 import Button from '../../components/Button'
 import './index.css'
+import routes from './routes'
 
 export const Layout: FC<{
   children?: ReactNode
 }> = ({ children }) => {
   const [location, navigate] = useLocation()
 
-  const items = [
-    {
-      key: 'slash-box',
-      icon: <i className="fa-solid fa-cube" />,
-      label: 'Slash box',
-      onClick: () => navigate('/slash-box'),
-    },
-    {
-      key: 'progress-bar',
-      icon: <i className="fa-solid fa-cube" />,
-      label: 'Progress Bar',
-      onClick: () => navigate('/progress-bar'),
-    },
-    {
-      key: 'loading-bar',
-      icon: <i className="fa-solid fa-cube" />,
-      label: 'Loading Bar',
-      onClick: () => navigate('/loading-bar'),
-    },
-    {
-      key: 'tabs',
-      icon: <i className="fa-solid fa-cube" />,
-      label: 'Tabs',
-      onClick: () => navigate('/tabs'),
-    },
-    {
-      key: 'gradient-border',
-      icon: <i className="fa-solid fa-cube" />,
-      label: 'Gradient Border',
-      onClick: () => navigate('/gradient-border'),
-    },
-    {
-      key: 'multiple-border-box',
-      icon: <i className="fa-solid fa-cube" />,
-      label: 'Multiple Border Box',
-      onClick: () => navigate('/multiple-border-box'),
-    },
-    {
-      key: 'infinite-scrolling',
-      icon: <i className="fa-solid fa-cube" />,
-      label: 'Infinite Scrolling',
-      onClick: () => navigate('/infinite-scrolling'),
-    },
-  ]
-
-  const activeItem = items.find((item) => location === `/${item.key}`)
+  const activeRoute = routes.find((route) => location === `/${route.key}`)
 
   return (
     <div className="h-dvh w-dvw space-y-8 overflow-x-hidden overflow-y-auto text-white">
@@ -71,19 +27,19 @@ export const Layout: FC<{
       </header>
 
       <nav className="flex w-full flex-wrap items-center justify-center gap-4 px-4">
-        {items.map((item) => {
-          const isActive = activeItem?.key === item.key
+        {routes.map((route) => {
+          const isActive = activeRoute?.key === route.key
 
           return (
-            <Button key={item.key} isActive={isActive} onClick={() => item.onClick?.()}>
-              <div className="aspect-square shrink-0">{item.icon}</div>
-              <div className="">{item.label}</div>
+            <Button key={route.key} isActive={isActive} onClick={() => navigate(`/${route.key}`)}>
+              <div className="aspect-square shrink-0">{route.icon}</div>
+              <div className="">{route.label}</div>
             </Button>
           )
         })}
       </nav>
 
-      {activeItem && <main className="mx-auto w-full max-w-3xl space-y-8 px-4 pb-4">{children}</main>}
+      {activeRoute && <main className="mx-auto w-full max-w-3xl space-y-8 px-4 pb-4">{children}</main>}
     </div>
   )
 }
