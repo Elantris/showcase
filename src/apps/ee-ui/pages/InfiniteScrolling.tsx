@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
-import { CodeBlock, Panel } from '.'
+import CodeBlock from '../components/CodeBlock'
+import Panel from '../components/Panel'
 
 const useInteractionObserver = (callback: IntersectionObserverCallback) => {
   const [target, setTarget] = useState<Element | null>(null)
@@ -41,12 +42,14 @@ const InfiniteSection = () => {
 
   return (
     <>
-      {data.map((v, i) => (
-        <div key={i} className="flex size-40 flex-col items-center justify-center gap-2 bg-gray-500">
-          <div className="text-lg font-bold">{i + 1}</div>
-          <div>{v}</div>
-        </div>
-      ))}
+      {data.map((v, i) => {
+        return (
+          <div key={i} className="flex size-40 flex-col items-center justify-center gap-2 bg-gray-500">
+            <div className="text-lg font-bold">{i + 1}</div>
+            <div>{v}</div>
+          </div>
+        )
+      })}
       <div ref={controllerRef} className="h-10">
         END
       </div>
@@ -80,7 +83,7 @@ const useInteractionObserver = (callback: IntersectionObserverCallback) => {
     setTarget,
   }
 }
-        `.trim()}
+`.trim()}
         />
       </Panel>
 

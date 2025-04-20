@@ -1,4 +1,5 @@
-import { CodeBlock, Panel } from '.'
+import CodeBlock from '../components/CodeBlock'
+import Panel from '../components/Panel'
 
 const MultipleBorderBox = () => {
   return (

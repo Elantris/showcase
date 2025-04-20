@@ -1,21 +1,12 @@
 import { Route, Router, Switch } from 'wouter'
 import { useHashLocation } from 'wouter/use-hash-location'
-import Home from './pages/Home'
-import { Layout } from './pages/ee-ui'
-import routes from './pages/ee-ui/routes'
+import Home from './apps/Home'
+import EeUi from './apps/ee-ui'
 
 const App = () => (
   <Router hook={useHashLocation}>
     <Switch>
-      <Route path="/ee-ui" nest>
-        <Layout>
-          <Switch>
-            {routes.map((route) => (
-              <Route key={route.key} path={`/${route.key}`} component={route.component} />
-            ))}
-          </Switch>
-        </Layout>
-      </Route>
+      <Route path="/ee-ui/:key?" component={EeUi} />
       <Route component={Home} />
     </Switch>
   </Router>

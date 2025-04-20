@@ -1,5 +1,6 @@
-import { CodeBlock, Panel } from '.'
-import Button from '../../components/Button'
+import Button from '../../../components/Button'
+import CodeBlock from '../components/CodeBlock'
+import Panel from '../components/Panel'
 
 const SlashBox = () => {
   return (
@@ -48,7 +49,7 @@ const SlashBox = () => {
     content: ' ';
   }
 }
-    `.trim()}
+`.trim()}
         />
       </Panel>
     </>

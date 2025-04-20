@@ -1,6 +1,7 @@
 import { FC, ReactNode, useState } from 'react'
 import { twMerge } from 'tailwind-merge'
-import { CodeBlock, Panel } from '.'
+import CodeBlock from '../components/CodeBlock'
+import Panel from '../components/Panel'
 
 const Tabs1: FC<{
   variant?: 'default' | 'items-only'
@@ -47,19 +48,21 @@ const Tabs1: FC<{
 
       {variant === 'default' && (
         <div className="relative h-fit overflow-hidden">
-          {items.map((item) => (
-            <div
-              key={item.key}
-              className={twMerge(
-                'space-y-2 transition-transform duration-300',
-                item.key === __activeKey
-                  ? 'translate-y-0 opacity-100 transition-[opacity,transform]'
-                  : 'absolute -right-full translate-y-2 opacity-0',
-              )}
-            >
-              {item.key === __activeKey && item.children}
-            </div>
-          ))}
+          {items.map((item) => {
+            return (
+              <div
+                key={item.key}
+                className={twMerge(
+                  'space-y-2 transition-transform duration-300',
+                  item.key === __activeKey
+                    ? 'translate-y-0 opacity-100 transition-[opacity,transform]'
+                    : 'absolute -right-full translate-y-2 opacity-0',
+                )}
+              >
+                {item.key === __activeKey && item.children}
+              </div>
+            )
+          })}
         </div>
       )}
     </div>
@@ -150,7 +153,7 @@ const Tabs: FC<{
 
   // ...
 }
-        `.trim()}
+`.trim()}
         />
       </Panel>
     </>
