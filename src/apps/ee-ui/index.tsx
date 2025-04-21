@@ -1,6 +1,7 @@
 import { useLocation, useRoute } from 'wouter'
 import Button from '../../components/Button'
 import './index.css'
+import Countdown from './pages/Countdown'
 import GradientBorder from './pages/GradientBorder'
 import InfiniteScrolling from './pages/InfiniteScrolling'
 import LoadingBar from './pages/LoadingBar'
@@ -51,6 +52,12 @@ const pages = [
     icon: <i className="fa-solid fa-cube" />,
     label: 'Infinite Scrolling',
     children: <InfiniteScrolling />,
+  },
+  {
+    key: 'countdown',
+    icon: <i className="fa-solid fa-cube" />,
+    label: 'Countdown',
+    children: <Countdown />,
   },
 ]
 
