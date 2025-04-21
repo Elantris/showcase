@@ -1,14 +1,16 @@
+import { lazy, Suspense } from 'react'
 import { useLocation, useRoute } from 'wouter'
 import Button from '../../components/Button'
 import './index.css'
-import Countdown from './pages/Countdown'
-import GradientBorder from './pages/GradientBorder'
-import InfiniteScrolling from './pages/InfiniteScrolling'
-import LoadingBar from './pages/LoadingBar'
-import MultipleBorderBox from './pages/MultipleBorderBox'
-import ProgressBar from './pages/ProgressBar'
-import SlashBox from './pages/SlashBox'
-import Tabs from './pages/Tabs'
+
+const SlashBox = lazy(() => import('./pages/SlashBox'))
+const ProgressBar = lazy(() => import('./pages/ProgressBar'))
+const LoadingBar = lazy(() => import('./pages/LoadingBar'))
+const Tabs = lazy(() => import('./pages/Tabs'))
+const GradientBorder = lazy(() => import('./pages/GradientBorder'))
+const MultipleBorderBox = lazy(() => import('./pages/MultipleBorderBox'))
+const InfiniteScrolling = lazy(() => import('./pages/InfiniteScrolling'))
+const Countdown = lazy(() => import('./pages/Countdown'))
 
 const pages = [
   {
@@ -84,18 +86,24 @@ const EeUi = () => {
 
       <nav className="flex w-full flex-wrap items-center justify-center gap-4 px-4">
         {pages.map((route) => {
-          const isActive = activePage?.key === route.key
-
           return (
-            <Button key={route.key} isActive={isActive} onClick={() => navigate(`/ee-ui/${route.key}`)}>
+            <Button
+              key={route.key}
+              isActive={activePage?.key === route.key}
+              onClick={() => {
+                navigate(`/ee-ui/${route.key}`)
+              }}
+            >
               <div className="aspect-square shrink-0">{route.icon}</div>
-              <div className="">{route.label}</div>
+              <div>{route.label}</div>
             </Button>
           )
         })}
       </nav>
 
-      <main className="mx-auto w-full max-w-3xl space-y-8 px-4 pb-8">{activePage?.children}</main>
+      <main className="mx-auto w-full max-w-3xl space-y-8 px-4 pb-8">
+        <Suspense fallback={<div>Loading...</div>}>{activePage?.children}</Suspense>
+      </main>
     </div>
   )
 }
