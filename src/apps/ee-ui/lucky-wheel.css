@@ -1,0 +1,198 @@
+.lucky-wheel-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  aspect-ratio: 1/1;
+  width: 100%;
+  max-width: 300px;
+
+  > * {
+    position: absolute;
+    inset: 0;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  .plate {
+    background-image: url('https://i.imgur.com/uDg2aPA.png');
+
+    &.spinning {
+      transition: transform 5s ease-in-out;
+    }
+
+    &.spinning-0 {
+      transform: rotate(calc(36deg * 0 + 360deg * 5));
+    }
+    &.spinning-1 {
+      transform: rotate(calc(36deg * 1 + 360deg * 5));
+    }
+    &.spinning-2 {
+      transform: rotate(calc(36deg * 2 + 360deg * 5));
+    }
+    &.spinning-3 {
+      transform: rotate(calc(36deg * 3 + 360deg * 5));
+    }
+    &.spinning-4 {
+      transform: rotate(calc(36deg * 4 + 360deg * 5));
+    }
+    &.spinning-5 {
+      transform: rotate(calc(36deg * 5 + 360deg * 5));
+    }
+    &.spinning-6 {
+      transform: rotate(calc(36deg * 6 + 360deg * 5));
+    }
+    &.spinning-7 {
+      transform: rotate(calc(36deg * 7 + 360deg * 5));
+    }
+    &.spinning-8 {
+      transform: rotate(calc(36deg * 8 + 360deg * 5));
+    }
+    &.spinning-9 {
+      transform: rotate(calc(36deg * 9 + 360deg * 5));
+    }
+
+    &.rotate-to-0 {
+      transform: rotate(calc(36deg * 0));
+    }
+    &.rotate-to-1 {
+      transform: rotate(calc(36deg * 1));
+    }
+    &.rotate-to-2 {
+      transform: rotate(calc(36deg * 2));
+    }
+    &.rotate-to-3 {
+      transform: rotate(calc(36deg * 3));
+    }
+    &.rotate-to-4 {
+      transform: rotate(calc(36deg * 4));
+    }
+    &.rotate-to-5 {
+      transform: rotate(calc(36deg * 5));
+    }
+    &.rotate-to-6 {
+      transform: rotate(calc(36deg * 6));
+    }
+    &.rotate-to-7 {
+      transform: rotate(calc(36deg * 7));
+    }
+    &.rotate-to-8 {
+      transform: rotate(calc(36deg * 8));
+    }
+    &.rotate-to-9 {
+      transform: rotate(calc(36deg * 9));
+    }
+
+    .sector-anchor {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%) rotate(0deg);
+      aspect-ratio: 10/2;
+      width: 100%;
+
+      > * {
+        display: flex;
+        position: absolute;
+        justify-content: end;
+        align-items: center;
+        inset: 0;
+        padding-right: 22%;
+        color: white;
+        font-weight: bold;
+        font-size: 20px;
+        line-height: normal;
+        font-family: Inter;
+        text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.5);
+      }
+
+      .sector-0 {
+        transform: rotate(calc(-36deg * 0));
+      }
+      .sector-1 {
+        transform: rotate(calc(-36deg * 1));
+      }
+      .sector-2 {
+        transform: rotate(calc(-36deg * 2));
+      }
+      .sector-3 {
+        transform: rotate(calc(-36deg * 3));
+      }
+      .sector-4 {
+        transform: rotate(calc(-36deg * 4));
+      }
+      .sector-5 {
+        transform: rotate(calc(-36deg * 5));
+      }
+      .sector-6 {
+        transform: rotate(calc(-36deg * 6));
+      }
+      .sector-7 {
+        transform: rotate(calc(-36deg * 7));
+      }
+      .sector-8 {
+        transform: rotate(calc(-36deg * 8));
+      }
+      .sector-9 {
+        transform: rotate(calc(-36deg * 9));
+      }
+    }
+  }
+
+  .frame {
+    background-image: url('https://i.imgur.com/6hOfWBr.png');
+  }
+
+  .light-1,
+  .light-2 {
+    opacity: 0;
+    animation-duration: 0.6s;
+    animation-timing-function: steps(2, jump-none);
+    animation-iteration-count: infinite;
+    animation-name: sparkling;
+  }
+  .light-1 {
+    background-image: url('https://i.imgur.com/wTyEPB4.png');
+  }
+  .light-2 {
+    animation-delay: 0.3s;
+    background-image: url('https://i.imgur.com/EZWIuKC.png');
+  }
+
+  #go-button {
+    all: unset;
+    position: absolute;
+    top: 51%;
+    left: 50%;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-name: zoom-in-out;
+    cursor: pointer;
+    background-image: url('https://i.imgur.com/8u1k7lO.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    aspect-ratio: 88/58;
+    width: 20%;
+  }
+}
+
+@keyframes sparkling {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes zoom-in-out {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.5);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+}

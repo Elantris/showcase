@@ -2,6 +2,7 @@ import { lazy, Suspense } from 'react'
 import { useLocation, useRoute } from 'wouter'
 import Button from '../../components/Button'
 import './index.css'
+import LuckyWheel from './pages/LuckyWheel'
 
 const SlashBox = lazy(() => import('./pages/SlashBox'))
 const ProgressBar = lazy(() => import('./pages/ProgressBar'))
@@ -60,6 +61,12 @@ const pages = [
     icon: <i className="fa-solid fa-cube" />,
     label: 'Countdown',
     children: <Countdown />,
+  },
+  {
+    key: 'lucky-wheel',
+    icon: <i className="fa-solid fa-cube" />,
+    label: 'Lucky Wheel',
+    children: <LuckyWheel />,
   },
 ]
 
