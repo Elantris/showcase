@@ -16,39 +16,39 @@ const Countdown = lazy(() => import('./pages/Countdown'))
 const pages = [
   {
     key: 'slash-box',
-    icon: <i className="fa-solid fa-cube" />,
+    icon: <i className="fa-brands fa-css" />,
     label: 'Slash box',
     children: <SlashBox />,
   },
   {
     key: 'progress-bar',
-    icon: <i className="fa-solid fa-cube" />,
+    icon: <i className="fa-brands fa-css" />,
     label: 'Progress Bar',
     children: <ProgressBar />,
   },
   {
     key: 'loading-bar',
-    icon: <i className="fa-solid fa-cube" />,
+    icon: <i className="fa-brands fa-css" />,
     label: 'Loading Bar',
     children: <LoadingBar />,
+  },
+  {
+    key: 'gradient-border',
+    icon: <i className="fa-brands fa-css" />,
+    label: 'Gradient Border',
+    children: <GradientBorder />,
+  },
+  {
+    key: 'multiple-border-box',
+    icon: <i className="fa-brands fa-css" />,
+    label: 'Multiple Border Box',
+    children: <MultipleBorderBox />,
   },
   {
     key: 'tabs',
     icon: <i className="fa-solid fa-cube" />,
     label: 'Tabs',
     children: <Tabs />,
-  },
-  {
-    key: 'gradient-border',
-    icon: <i className="fa-solid fa-cube" />,
-    label: 'Gradient Border',
-    children: <GradientBorder />,
-  },
-  {
-    key: 'multiple-border-box',
-    icon: <i className="fa-solid fa-cube" />,
-    label: 'Multiple Border Box',
-    children: <MultipleBorderBox />,
   },
   {
     key: 'infinite-scrolling',

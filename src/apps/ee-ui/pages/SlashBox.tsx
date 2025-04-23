@@ -52,6 +52,49 @@ const SlashBox = () => {
 `.trim()}
         />
       </Panel>
+
+      <Panel title="格狀背景">
+        <div className="lattice-box demo">
+          <span>ABCDE</span>
+        </div>
+
+        <CodeBlock
+          title="CSS"
+          language="css"
+          codes={`
+.lattice-box {
+  display: inline-flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid var(--color-gray-300);
+  border-radius: 4px;
+  overflow: hidden;
+
+  > * {
+    position: relative;
+    color: white;
+  }
+
+  &::before {
+    display: block;
+    position: absolute;
+    opacity: 0.75;
+    inset: 0;
+    background-image:
+      linear-gradient(to right, transparent 70%, var(--color-gray-500) 70%),
+      linear-gradient(to bottom, transparent 70%, var(--color-gray-500) 70%);
+    background-size: 1rem 1rem;
+    content: ' ';
+  }
+}
+.lattice-box.demo {
+  width: 6rem;
+  height: 4rem;
+}
+`.trim()}
+        />
+      </Panel>
     </>
   )
 }

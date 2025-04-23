@@ -218,7 +218,9 @@ const Home = () => {
         {activeProject && (
           <div
             className="animate-fade-in z-50 w-full max-w-sm space-y-4 rounded-lg border border-zinc-500 bg-zinc-800 p-4 leading-relaxed shadow"
-            onClick={(e) => e.stopPropagation()}
+            onClick={(e) => {
+              e.stopPropagation()
+            }}
           >
             <h1 className="text-xl text-violet-300">{activeProject.title}</h1>
             {activeProject.description}

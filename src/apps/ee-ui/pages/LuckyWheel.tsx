@@ -9,6 +9,9 @@ const LuckyWheel = () => {
   const [result, setResult] = useState(0)
 
   const spin = () => {
+    if (isSpinning) {
+      return
+    }
     setIsSpinning(true)
     setResult(Math.floor(Math.random() * 10))
     setTimeout(() => {
