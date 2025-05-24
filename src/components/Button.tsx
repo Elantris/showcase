@@ -11,8 +11,8 @@ const Button: FC<
     <button
       className={twMerge(
         'inline-flex h-8 cursor-pointer items-center gap-2 rounded border border-zinc-500 px-2',
-        'transition-all hover:border-violet-500 hover:text-violet-300',
-        isActive && 'border-violet-500 text-violet-300',
+        'transition-all hover:border-violet-500',
+        isActive && 'border-violet-500',
         className,
       )}
       {...props}

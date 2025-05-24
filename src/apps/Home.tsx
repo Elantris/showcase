@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { ReactNode, useState } from 'react'
 import { twMerge } from 'tailwind-merge'
 import { useLocation } from 'wouter'
 import Button from '../components/Button'
@@ -7,14 +7,24 @@ const Home = () => {
   const [, navigate] = useLocation()
   const [activeKey, setActiveKey] = useState('')
 
-  const projects = [
+  const projects: {
+    key: string
+    cover: ReactNode
+    title: string
+    description: ReactNode
+    footer: ReactNode
+  }[] = [
     {
       key: 'ee-ui',
       cover: <i className="fa-solid fa-layer-group text-7xl" />,
       title: 'EE UI',
       description: (
         <>
-          <p>{'整理曾經寫過的元件，紀錄思考過程中有趣的點子與寫法。'}</p>
+          <p>
+            {
+              '整理自己在各個專案內曾經寫過的各種元件，紀錄實作過程中思考的方式、遇到的問題、提出的方案、最後實際解決的寫法。'
+            }
+          </p>
         </>
       ),
       footer: (
@@ -24,6 +34,34 @@ const Home = () => {
               navigate('/ee-ui')
             }}
           >
+            {'Demo'}
+          </Button>
+        </>
+      ),
+    },
+    {
+      key: 'paste-up',
+      cover: (
+        <img src="https://elantris.github.io/paste-up/label.png" alt="paste-up" draggable="false" className="size-24" />
+      ),
+      title: 'Paste Up',
+      description: (
+        <>
+          <p>
+            {
+              '幫一個身為桌遊狂熱者的朋友製作的紙條編輯器，能夠調整紙條的樣式排版與圖示文字，並且即時預覽印刷效果。這些紙條可以放入卡套內提供桌遊卡牌的內容翻譯。'
+            }
+          </p>
+        </>
+      ),
+      footer: (
+        <>
+          <Button
+            onClick={() => {
+              window.open('https://elantris.github.io/paste-up/', '_blank')
+            }}
+          >
+            <i className="fa-brands fa-github" />
             {'Demo'}
           </Button>
         </>
@@ -187,7 +225,7 @@ const Home = () => {
 
   return (
     <div className="relative flex h-dvh w-dvw items-center justify-center p-4 text-white">
-      <div className="flex flex-wrap items-center justify-center gap-4">
+      <main className="flex flex-wrap items-center justify-center gap-4">
         {projects.map((project) => {
           return (
             <div
@@ -204,7 +242,7 @@ const Home = () => {
             </div>
           )
         })}
-      </div>
+      </main>
 
       <div
         className={twMerge(
@@ -228,6 +266,15 @@ const Home = () => {
           </div>
         )}
       </div>
+
+      <footer className="absolute bottom-4 w-full text-center">
+        <a href="https://github.com/Elantris" target="_blank">
+          <div className="space-x-2">
+            <i className="fa-brands fa-github" />
+            <span>{'Elantris'}</span>
+          </div>
+        </a>
+      </footer>
     </div>
   )
 }
