@@ -19,8 +19,8 @@ const Tabs1: FC<{
   const __activeKey = activeKey ?? _activeKey
 
   return (
-    <div className="space-y-2">
-      <div className="w-full overflow-x-scroll">
+    <div>
+      <div className="w-full overflow-x-scroll pb-4">
         <div className="flex w-fit items-center gap-2 whitespace-nowrap">
           {items.map((item) => {
             return (
@@ -47,19 +47,19 @@ const Tabs1: FC<{
       </div>
 
       {variant === 'default' && (
-        <div className="relative h-fit overflow-hidden">
+        <div className="relative overflow-hidden">
           {items.map((item) => {
             return (
               <div
                 key={item.key}
                 className={twMerge(
-                  'space-y-2 transition-transform duration-300',
+                  'w-full -translate-y-2 space-y-2 opacity-0',
                   item.key === __activeKey
-                    ? 'translate-y-0 opacity-100 transition-[opacity,transform]'
-                    : 'absolute -right-full translate-y-2 opacity-0',
+                    ? 'translate-y-0 opacity-100 transition-all duration-500 ease-in-out'
+                    : 'absolute top-full',
                 )}
               >
-                {item.key === __activeKey && item.children}
+                {item.children}
               </div>
             )
           })}
@@ -135,7 +135,7 @@ const Tabs = () => {
 
   return (
     <>
-      <Panel title="Tabs">
+      <Panel title="Tabs / 頁籤">
         <Tabs1 items={items} />
 
         <CodeBlock
