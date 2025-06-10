@@ -1,4 +1,4 @@
-import{j as e,P as r,B as t}from"./index-XnEKkOzR.js";import{C as i}from"./CodeBlock-nzHtFsxY.js";const s=()=>e.jsxs(e.Fragment,{children:[e.jsxs(r,{title:"Slash Box / 漸層斜線背景",children:[e.jsx("div",{className:"slash-box",children:e.jsx("span",{children:"ABCDE"})}),e.jsx("p",{children:e.jsx("a",{href:"https://hackmd.io/@eelayntris/ryX8m2e06",target:"_blank",children:e.jsxs(t,{children:[e.jsx("i",{className:"fa-solid fa-file-lines"}),"用 CSS 漸層實作斜線背景"]})})}),e.jsx(i,{title:"CSS",language:"css",codes:`
+import{j as e,P as r,B as t}from"./index-DCqNCng9.js";import{C as i}from"./CodeBlock-Cqr3bBQt.js";const s=()=>e.jsxs(e.Fragment,{children:[e.jsxs(r,{title:"Slash Box / 漸層斜線背景",children:[e.jsx("div",{className:"slash-box",children:e.jsx("span",{children:"ABCDE"})}),e.jsx("p",{children:e.jsx("a",{href:"https://hackmd.io/@eelayntris/ryX8m2e06",target:"_blank",children:e.jsxs(t,{children:[e.jsx("i",{className:"fa-solid fa-file-lines"}),"用 CSS 漸層實作斜線背景"]})})}),e.jsx(i,{title:"CSS",language:"css",codes:`
 .slash-box {
   display: inline-flex;
   position: relative;

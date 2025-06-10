@@ -1,4 +1,4 @@
-import{j as e,P as r,B as i}from"./index-XnEKkOzR.js";import{C as a}from"./CodeBlock-nzHtFsxY.js";const d=()=>e.jsx(e.Fragment,{children:e.jsxs(r,{title:"Gradient Border / 漸層邊框",children:[e.jsx("div",{className:"gradient-border demo",children:e.jsx("div",{children:"Background with Mask"})}),e.jsx("p",{children:e.jsx("a",{href:"https://hackmd.io/@eelayntris/HJwq-jPeJx",target:"_blank",children:e.jsxs(i,{children:[e.jsx("i",{className:"fa-solid fa-file-lines"}),"用 CSS 實作漸層邊框"]})})}),e.jsx(a,{title:"CSS",language:"css",codes:`
+import{j as e,P as r,B as i}from"./index-DCqNCng9.js";import{C as a}from"./CodeBlock-Cqr3bBQt.js";const d=()=>e.jsx(e.Fragment,{children:e.jsxs(r,{title:"Gradient Border / 漸層邊框",children:[e.jsx("div",{className:"gradient-border demo",children:e.jsx("div",{children:"Background with Mask"})}),e.jsx("p",{children:e.jsx("a",{href:"https://hackmd.io/@eelayntris/HJwq-jPeJx",target:"_blank",children:e.jsxs(i,{children:[e.jsx("i",{className:"fa-solid fa-file-lines"}),"用 CSS 實作漸層邊框"]})})}),e.jsx(a,{title:"CSS",language:"css",codes:`
 .gradient-border {
   position: relative;
   padding: 8px;

@@ -1,4 +1,4 @@
-import{j as e,P as o}from"./index-XnEKkOzR.js";import{C as r}from"./CodeBlock-nzHtFsxY.js";const t=()=>e.jsx(e.Fragment,{children:e.jsxs(o,{title:"Multiple Border Box / 多層邊框",children:[e.jsx("div",{className:"multiple-border-box demo",children:"Multiple borders"}),e.jsx(r,{title:"CSS",language:"css",codes:`
+import{j as e,P as o}from"./index-DCqNCng9.js";import{C as r}from"./CodeBlock-Cqr3bBQt.js";const t=()=>e.jsx(e.Fragment,{children:e.jsxs(o,{title:"Multiple Border Box / 多層邊框",children:[e.jsx("div",{className:"multiple-border-box demo",children:"Multiple borders"}),e.jsx(r,{title:"CSS",language:"css",codes:`
 .multiple-border-box {
   position: relative;
   outline: 4px solid var(--color-violet-500);

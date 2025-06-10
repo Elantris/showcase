@@ -1,4 +1,4 @@
-import{j as i,P as t,B as a}from"./index-XnEKkOzR.js";import{C as s}from"./CodeBlock-nzHtFsxY.js";const o=()=>i.jsx(i.Fragment,{children:i.jsxs(t,{title:"Loading Bar / 純 CSS 進度條",children:[i.jsxs("div",{className:"loading-bar",children:[i.jsx("div",{}),i.jsx("div",{})]}),i.jsx("p",{children:i.jsx("a",{href:"https://hackmd.io/@eelayntris/Hy9JhyIDyx",target:"_blank",children:i.jsxs(a,{children:[i.jsx("i",{className:"fa-solid fa-file-lines"}),"用 CSS 實作載入動畫"]})})}),i.jsx(s,{title:"CSS",language:"css",codes:`
+import{j as i,P as t,B as a}from"./index-DCqNCng9.js";import{C as s}from"./CodeBlock-Cqr3bBQt.js";const o=()=>i.jsx(i.Fragment,{children:i.jsxs(t,{title:"Loading Bar / 純 CSS 進度條",children:[i.jsxs("div",{className:"loading-bar",children:[i.jsx("div",{}),i.jsx("div",{})]}),i.jsx("p",{children:i.jsx("a",{href:"https://hackmd.io/@eelayntris/Hy9JhyIDyx",target:"_blank",children:i.jsxs(a,{children:[i.jsx("i",{className:"fa-solid fa-file-lines"}),"用 CSS 實作載入動畫"]})})}),i.jsx(s,{title:"CSS",language:"css",codes:`
 .loading-bar {
   position: relative;
   border: 2px solid black;

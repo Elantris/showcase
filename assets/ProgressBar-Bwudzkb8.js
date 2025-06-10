@@ -1,4 +1,4 @@
-import{j as r,P as o}from"./index-XnEKkOzR.js";import{C as e}from"./CodeBlock-nzHtFsxY.js";const i=()=>r.jsx(r.Fragment,{children:r.jsxs(o,{title:"Progress Bar / 條紋進度條",children:[r.jsx("div",{className:"progress-bar",children:r.jsx("div",{style:{width:"60%"}})}),r.jsx(e,{title:"CSS",language:"css",codes:`
+import{j as r,P as o}from"./index-DCqNCng9.js";import{C as e}from"./CodeBlock-Cqr3bBQt.js";const i=()=>r.jsx(r.Fragment,{children:r.jsxs(o,{title:"Progress Bar / 條紋進度條",children:[r.jsx("div",{className:"progress-bar",children:r.jsx("div",{style:{width:"60%"}})}),r.jsx(e,{title:"CSS",language:"css",codes:`
 .progress-bar {
   position: relative;
   border: 2px solid var(--color-zinc-200);
